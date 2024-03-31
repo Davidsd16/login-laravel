@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -15,9 +15,10 @@ class RegisterController extends Controller
     }
 
     // Método para registrar un nuevo usuario
-    public function resgister(RegisterRequest $request){
+    public function register(RegisterRequest $request){
         // Valida los datos del formulario de registro y crea un nuevo usuario
-        $user = User::created($request->validate()); 
+        $user = User::create($request->validated()); 
     }
     
 }
+

@@ -24,9 +24,9 @@ class RegisterRequest extends FormRequest
         return [
             'email' => 'required|unique:users,email', // Campo 'email' requerido y debe ser único en la tabla 'users'
             'username' => 'required|unique:users,username', // Campo 'username' requerido y debe ser único en la tabla 'users'
-            'password' => 'required|min:8', // Campo 'password' requerido y debe tener al menos 8 caracteres
+            'password' => 'required|min:5', // Campo 'password' requerido y debe tener al menos 8 caracteres
             'password_confirmation' => 'required|same:password', // Campo 'password_confirmation' requerido y debe ser igual al campo 'password'
         ];
     }
-    
+
 }
