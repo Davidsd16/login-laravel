@@ -10,9 +10,18 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     // Método para mostrar el formulario de inicio de sesión
-    public function show(){
+    public function show()
+    {
+        // Verifica si el usuario ha iniciado sesión
+        if (Auth::check()) {
+            
+            // Redirige a la página de inicio si el usuario ha iniciado sesión
+            return redirect('home'); 
+        }
+
         return view('auth.login'); // Retorna la vista para el formulario de inicio de sesión
     }
+
 
     // Método para realizar el inicio de sesión
     public function login(LoginRequest $request){
