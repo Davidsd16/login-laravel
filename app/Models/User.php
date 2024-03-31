@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
     ];
 
@@ -44,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Mutador para establecer la contraseña del usuario.
+     *
+     * @param  string  $value La contraseña sin cifrar proporcionada para el usuario.
+     * @return void
+     */
+    public function setPasswordAttribute($value){
+        // Cifra la contraseña proporcionada utilizando el algoritmo bcrypt.
+        $this->attributes['password'] = bcrypt($value);
+    }
+    
 }
