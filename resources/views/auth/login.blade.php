@@ -7,7 +7,8 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="/login" method="POST">
+    <form action="/login" method="post">
+        @csrf
         username/email 
         <input type="text" name="username">
 
