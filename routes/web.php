@@ -9,9 +9,7 @@ Route::get('/', function () {
 });
 
 // Ruta para mostrar el formulario de registro
-Route::get('/register', function () {
-    return view('auth.register');
-});
+Route::get('/register', [RegisterController::class, 'show']);
 
 // Ruta para procesar el formulario de registro
 Route::post('/register', [RegisterController::class, 'register']);

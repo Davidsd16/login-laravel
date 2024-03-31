@@ -18,7 +18,10 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request){
         // Valida los datos del formulario de registro y crea un nuevo usuario
         $user = User::create($request->validated()); 
+
+        // Redirige al usuario a la página de inicio de sesión y muestra un mensaje de éxito
+        return redirect('/login')->with('success', 'Account created successfully');
     }
-    
+
 }
 
