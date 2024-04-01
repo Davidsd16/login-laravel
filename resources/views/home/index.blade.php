@@ -1,4 +1,4 @@
-@extends('layout.app-master')
+@extends('layouts.app-master')
 
 @section('content')
 
@@ -14,6 +14,6 @@
     @guest
         <p> Bienvenido, para ver el contenido <a href="\login">inicia sesion</p>
     @endguest
-    
+
 @endsection
 
