@@ -7,17 +7,25 @@
     <title>Aplicación de Login</title>
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.main.css')}}">
     <style>
-        .body {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .form-container {
-            width: 400px;
-        }
+    .container {
+    width: 300px; /* Ancho del contenedor */
+    margin: 50px auto 0; /* Margen superior de 50px, margen automático horizontal */
+    }
+
+    .form-control {
+        width: 100%;
+        max-width: 400px; 
+        padding: 10px; 
+    }
+
     </style>
 </head>
 <body>
