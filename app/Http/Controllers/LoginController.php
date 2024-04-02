@@ -31,7 +31,7 @@ class LoginController extends Controller
         // Valida las credenciales
         if (!Auth::validate($credentials)) {
             // Si las credenciales no son válidas, redirige al formulario de inicio de sesión con un mensaje de error
-            return redirect()->to('/login')->withErrors('auth.failed');
+            return redirect()->to('/login')->withErrors('Username and/or password is incorrect');
         }
 
         // Obtiene al usuario autenticado
