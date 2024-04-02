@@ -28,8 +28,8 @@ class RegisterController extends Controller
         // Valida los datos del formulario de registro y crea un nuevo usuario
         $user = User::create($request->validated()); 
 
-        // Redirige al usuario a la página de inicio de sesión y muestra un mensaje de éxito
-        return redirect('/login')->with('success', 'Account created successfully');
+        // Muestra la vista de inicio de sesión directamente
+        return view('auth.login')->with('success', 'Account created successfully');
     }
 
 }
