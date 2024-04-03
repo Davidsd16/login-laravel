@@ -12,14 +12,11 @@ class RegisterController extends Controller
 {
     // Método para mostrar el formulario de registro
     public function show(){
-
         // Verifica si el usuario ha iniciado sesión
         if (Auth::check()) {
-            
             // Redirige a la página de inicio si el usuario ha iniciado sesión
             return redirect('home'); 
         }
-
         return view('auth.register'); // Retorna la vista para el formulario de registro
     }
 
@@ -27,10 +24,8 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request){
         // Valida los datos del formulario de registro y crea un nuevo usuario
         $user = User::create($request->validated()); 
-
-        // Muestra la vista de inicio de sesión directamente
-        return view('auth.login')->with('success', 'Account created successfully');
+        // Redirige al usuario a la página de inicio de sesión y muestra un mensaje de éxito
+        return redirect('/login')->with('success', 'Account created successfully');
     }
-
 }
 
